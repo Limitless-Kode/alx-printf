@@ -13,6 +13,7 @@ int _putpointer(void *p);
 int _putint(int n);
 int _putunsigned(unsigned int n);
 int _printf(const char *format, ...);
+int _putoctal(unsigned int n);
 
 #endif /* MAIN_H */
 

@@ -48,6 +48,9 @@ int _printf(const char *format, ...)
             case 'p':
                 count += _putpointer(va_arg(args, void *));
                 break;
+           case 'o':
+              count += _putoctal(va_arg(args, unsigned int));
+              break;
             default:
                 count += _putchar('%');
                 if (format[i])
