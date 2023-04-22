@@ -39,6 +39,15 @@ int _printf(const char *format, ...)
             case 'u':
                 count += _putunsigned(va_arg(args, unsigned int));
                 break;
+            case 'x':
+              count += _puthex(va_arg(args, unsigned int), 0);
+              break;
+            case 'X':
+              count += _puthex(va_arg(args, unsigned int), 1) - 32;
+              break;
+            case 'p':
+                count += _putpointer(va_arg(args, void *));
+                break;
            case 'o':
               count += _putoctal(va_arg(args, unsigned int));
               break;
