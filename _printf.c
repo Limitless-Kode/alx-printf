@@ -39,6 +39,9 @@ int _printf(const char *format, ...)
             case 'u':
                 count += _putunsigned(va_arg(args, unsigned int));
                 break;
+           case 'o':
+              count += _putoctal(va_arg(args, unsigned int));
+              break;
             default:
                 count += _putchar('%');
                 if (format[i])
