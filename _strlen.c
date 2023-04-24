@@ -7,4 +7,3 @@ while (*s++)
 len++;
 return (len);
 }
-
