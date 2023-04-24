@@ -28,25 +28,25 @@ break;
 case '%':
 count += _putchar('%');
 break;
-case 'd':
-case 'i':
-count += _putint(va_arg(args, int));
-break;
-case 'u':
-count += _putunsigned(va_arg(args, unsigned int));
-break;
-case 'x':
-count += _puthex(va_arg(args, unsigned int), 0);
-break;
-case 'X':
-count += _puthex(va_arg(args, unsigned int), 1) - 32;
-break;
-case 'p':
-count += _putpointer(va_arg(args, void *));
-break;
-case 'o':
-count += _putoctal((unsigned int)va_arg(args, int));
-break;
+//case 'd':
+//case 'i':
+//count += _putint(va_arg(args, int));
+//break;
+//case 'u':
+//count += _putunsigned(va_arg(args, unsigned int));
+//break;
+//case 'x':
+//count += _puthex(va_arg(args, unsigned int), 0);
+//break;
+//case 'X':
+//count += _puthex(va_arg(args, unsigned int), 1) - 32;
+//break;
+//case 'p':
+//count += _putpointer(va_arg(args, void *));
+//break;
+//case 'o':
+//count += _putoctal((unsigned int)va_arg(args, int));
+//break;
 default:
 count += _putchar('%');
 if (format[i])
