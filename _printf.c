@@ -33,7 +33,7 @@ case 'i':
 count += _putint(va_arg(args, int));
 break;
 case 'u':
-count += _putunsigned_int(va_arg(args, unsigned int));
+count += _putunsigned(va_arg(args, unsigned int));
 break;
 case 'x':
 count += _puthex(va_arg(args, unsigned int), 0);
