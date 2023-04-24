@@ -1,18 +1,19 @@
 #include "main.h"
 
 /**
- * _putpointer - prints a pointer address
- * @ptr: pointer to be printed
+ * _putpointer - prints the address of a pointer
+ * @p: pointer to print
  *
- * Return: number of digits printed
+ * Return: number of characters printed
  */
-int _putpointer(void *ptr)
+int _putpointer(void *p)
 {
 unsigned long int ptr = (unsigned long int)p;
 char hex_digits[] = "0123456789abcdef";
-char buffer[20]; 
+char buffer[20]; // large enough to hold 64-bit hex number
 int i, j;
 
+// convert the pointer to a hexadecimal string
 i = 0;
 do {
 buffer[i++] = hex_digits[ptr % 16];
