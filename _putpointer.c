@@ -20,12 +20,14 @@ int _putpointer(void *p)
     } while (ptr > 0);
     buffer[i] = '\0';
 
+    // reverse the string
     for (j = 0; j < i / 2; j++) {
         char tmp = buffer[j];
         buffer[j] = buffer[i - j - 1];
         buffer[i - j - 1] = tmp;
     }
 
+    // print the pointer address with the "0x" prefix
     return (_putstring("0x") + _putstring(buffer));
 }
 
