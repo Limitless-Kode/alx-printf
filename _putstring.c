@@ -1,20 +1,21 @@
 #include "main.h"
 
 /**
- * _putstring - writes a string to the standard output
- * @str: The string to print
+ * _putstring - prints a string
+ * @str: the string to be printed
  *
- * Return: The number of characters written.
+ * Return: the number of characters printed
  */
 int _putstring(char *str)
 {
-int i;
+int i, count = 0;
+
+if (str == NULL)
+str = "(null)";
 
 for (i = 0; str[i] != '\0'; i++)
-{
-_putchar(str[i]);
-}
+count += _putchar(str[i]);
 
-return (i);
+return (count);
 }
 

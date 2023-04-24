@@ -1,20 +1,26 @@
 #include "main.h"
 
+/**
+ * _putint - prints an integer
+ * @n: the integer to be printed
+ *
+ * Return: the number of digits printed
+ */
 int _putint(int n)
 {
-    unsigned int num;
+int count = 0;
 
-    if (n < 0)
-    {
-        _putchar('-');
-        num = -n;
-    }
-    else
-        num = n;
-
-    if (num / 10)
-        _putint(num / 10);
-
-    _putchar(num % 10 + '0');
-    return (0);
+if (n < 0)
+{
+count += _putchar('-');
+n *= -1;
 }
+
+if (n / 10)
+count += _putint(n / 10);
+
+count += _putchar(n % 10 + '0');
+
+return (count);
+}
+

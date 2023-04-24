@@ -1,31 +1,39 @@
 #include "main.h"
 
 /**
- * _putpointer - prints the address of a pointer
- * @p: pointer to print
+ * _putpointer - prints a pointer address
+ * @ptr: pointer to be printed
  *
- * Return: number of characters printed
+ * Return: number of digits printed
  */
-int _putpointer(void *p)
+int _putpointer(void *ptr)
 {
-    unsigned long int ptr = (unsigned long int)p;
-    char hex_digits[] = "0123456789abcdef";
-    char buffer[20]; 
-    int i, j;
-
-    i = 0;
-    do {
-        buffer[i++] = hex_digits[ptr % 16];
-        ptr /= 16;
-    } while (ptr > 0);
-    buffer[i] = '\0';
-
-    for (j = 0; j < i / 2; j++) {
-        char tmp = buffer[j];
-        buffer[j] = buffer[i - j - 1];
-        buffer[i - j - 1] = tmp;
-    }
-
-    return (_putstring("0x") + _putstring(buffer));
+char *hex = "0123456789abcdef";
+unsigned long int num = (unsigned long int) ptr;
+unsigned long int temp = num;
+int len = 0;
+/* Find length of hex string */
+do {
+len++;
+temp /= 16;
+} while (temp != 0);
+/* Print "0x" */
+_putchar('0');
+_putchar('x');
+/* Print hex string */
+if (num == 0)
+len += _putchar('0');
+else
+{
+char buffer[len + 1];
+buffer[len] = '\0';
+for (int i = len - 1; i >= 0; i--)
+{
+buffer[i] = hex[num % 16];
+num /= 16;
+}
+len += _putstring(buffer);
+}
+return (len);
 }
 
